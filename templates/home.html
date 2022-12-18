@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" href="data:,">
+        <!-- <link rel="shortcut icon" href="#" /> -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profit Prediction of Startups for Investment Purpose</title>
+        <style>
+            input[type=number], select {
+            width: 20%;
+            padding: 5px 5px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            }
+            body, html {
+              height: 100%;
+              margin: 0;
+              font-family: Arial, Helvetica, sans-serif;
+            }
+            
+            * {
+              box-sizing: border-box;
+            }
+            
+            .bg-image {
+              /* The image used */
+              background-image: url("https://www.shutterstock.com/image-photo/startup-concept-businessman-touching-icon-260nw-1043242525.jpg");
+              
+              /* Add the blur effect */
+              filter: blur(8px);
+              -webkit-filter: blur(8px);
+              
+              /* Full height */
+              height: 100%; 
+              
+              /* Center and scale the image nicely */
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+            
+            /* Position text in the middle of the page/image */
+            .bg-text {
+              background-color: rgb(0,0,0); /* Fallback color */
+              background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+              color: white;
+              font-weight: bold;
+              border: 3px solid #f1f1f1;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              z-index: 2;
+              width: 80%;
+              padding: 20px;
+              text-align: center;
+            }
+            </style>
+    </head>
+
+    <body TEXT = "WHITE";>
+        <div class="bg-image"></div>
+        <div class="bg-text">
+        <h1> Profit Prediction in Dollars </h1>
+        <form method="POST" action="/Profit">
+
+            <br>
+            <label>State : </label>
+            <select style="font-size:15px" class="State" name = "State" placeholder="Enter States">
+                <option value = "New York">New York</option>
+                <option value = "California">California</option>
+                <option value = "Florida">Florida</option>
+
+            </select>
+            <br>
+
+            <label>R&D Spend:  </label>
+            <input style="font-size:15px" type = "number" name = "R&D Spend" min="1"  placeholder="Enter Money" size="30" required>
+            <!-- <h1 style="color:rgb(255, 255, 255);font-size:10px;">Eg: (1 to so on)$</h1> -->
+            <br>
+
+
+
+            <label>Administration : </label>
+            <input style="font-size:15px" type = "number" name = "Administration" min="1"  placeholder="Enter Money" size="30" required>
+            <!-- <h1 style="color:rgb(255, 255, 255);font-size:10px;">Eg: (1 to so on)$</h1> -->
+            <br>
+
+
+
+            <label>Marketing Spend : </label>
+            <input style="font-size:15px" type = "number" name = "Marketing Spend" min="1" placeholder="Enter Money" size="30" required>
+            <!-- <h1 style="color:rgb(255, 255, 255);font-size:10px;">Eg: (1 to so on)$</h1> -->
+            <br>
+
+
+
+            <!-- Submit -->
+            <style>
+                .button {
+                    display: inline-block;
+                    border-radius: 4px;
+                    background-color: #278ed2;
+                    border: none;
+                    color: #FFFFFF;
+                    text-align: center;
+                    font-size: 28px;
+                    padding: 20px;
+                    width: 250px;
+                    transition: all 0.5s;
+                    cursor: pointer;
+                    margin: 5px;
+                    }
+            .button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+                }
+
+                .button span:after {
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+                }
+
+                .button:hover span {
+                padding-right: 25px;
+                }
+
+                .button:hover span:after {
+                opacity: 1;
+                right: 0;
+                }
+            </style>
+            <button style="font-size:20px;vertical-align:middle;font-family:verdana" type="submit" value="Submit" class="button"><span>Estimated Profit </span></button>
+            <br><br>
+            <div style="font-size:25px;font-family:verdana" id="box">{{ prediction_text }} </div>&nbsp;
+            <div style="font-size:25px;font-family:verdana" class="card-title">Dollars</div>
+            <br>
+            <p>© Yeshwant Dighe</p>
+            <!-- <input type = "submit" value="SUBMIT">
+
+            <br> -->
+
+            <!-- <p> Profit of the Startup is <b> {{ prediction_text }} Dollars</b> Only </p> -->
+
+
+        </form>
+
+
+    </body>
+</html>
